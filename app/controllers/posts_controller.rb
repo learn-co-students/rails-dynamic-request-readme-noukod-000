@@ -1,10 +1,7 @@
-class CreatePosts < ActiveRecord::Migration
-  def change
-    create_table :posts do |t|
-      t.string :title
-      t.text :description
+class PostsController < ApplicationController
 
-      t.timestamps null: false
+    def show
+        @post = Post.find(params[:id])
     end
-  end
+    
 end
